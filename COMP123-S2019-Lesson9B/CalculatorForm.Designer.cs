@@ -44,6 +44,7 @@
             this.DecimalButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.BackSpaceButton = new System.Windows.Forms.Button();
+            this.HeightLabel = new System.Windows.Forms.Label();
             this.CalculatorButtonTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -308,6 +309,7 @@
             this.ClearButton.Tag = "clear";
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.CalculatorButton_Click);
             // 
             // BackSpaceButton
             // 
@@ -324,16 +326,31 @@
             this.BackSpaceButton.TabIndex = 14;
             this.BackSpaceButton.Tag = "back";
             this.BackSpaceButton.UseVisualStyleBackColor = false;
+            this.BackSpaceButton.Click += new System.EventHandler(this.CalculatorButton_Click);
+            // 
+            // HeightLabel
+            // 
+            this.HeightLabel.BackColor = System.Drawing.Color.White;
+            this.HeightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeightLabel.Location = new System.Drawing.Point(15, 27);
+            this.HeightLabel.Name = "HeightLabel";
+            this.HeightLabel.Size = new System.Drawing.Size(117, 44);
+            this.HeightLabel.TabIndex = 1;
+            this.HeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HeightLabel.Click += new System.EventHandler(this.HeightLabel_Click);
             // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 441);
+            this.Controls.Add(this.HeightLabel);
             this.Controls.Add(this.CalculatorButtonTableLayoutPanel);
             this.Name = "CalculatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
+            this.Load += new System.EventHandler(this.CalculatorForm_Load);
             this.CalculatorButtonTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -357,6 +374,7 @@
         private System.Windows.Forms.Button DecimalButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button BackSpaceButton;
+        private System.Windows.Forms.Label HeightLabel;
     }
 }
 
