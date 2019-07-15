@@ -19,6 +19,8 @@ namespace COMP123_S2019_Lesson9B
 
         public Label ActiveLabel { get; set; }
 
+        public Animation animationState;
+
         /// <summary>
         /// This is the Constructor for the Calculator Form
         /// </summary>
@@ -42,6 +44,7 @@ namespace COMP123_S2019_Lesson9B
 
             Size = new Size(320, 480);
 
+            animationState = Animation.IDLE;
         }
 
         /// <summary>
@@ -59,7 +62,8 @@ namespace COMP123_S2019_Lesson9B
             }
 
             ActiveLabel = null;
-            NumericKeyboardPanel.Visible = false;
+            animationState = Animation.DOWN;
+            AnimationTimer.Enabled = true;
         }
 
 
@@ -140,10 +144,12 @@ namespace COMP123_S2019_Lesson9B
             outputValue = float.Parse(outputString);
             ActiveLabel.Text = outputValue.ToString();
             clearNumericKeyboard();
-            NumericKeyboardPanel.Visible = false;
 
             ActiveLabel.BackColor = Color.White;
             ActiveLabel = null;
+
+            animationState = Animation.DOWN;
+            AnimationTimer.Enabled = true;
         }
 
 
@@ -213,6 +219,7 @@ namespace COMP123_S2019_Lesson9B
             NumericKeyboardPanel.BringToFront();
 
             AnimationTimer.Enabled = true;
+            animationState = Animation.UP;
         }
 
         /// <summary>
@@ -222,6 +229,22 @@ namespace COMP123_S2019_Lesson9B
         /// <param name="e"></param>
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
+            switch(animationState)
+            {
+                case Animation.IDLE:
+                    break;
+                case Animation.UP:
+                    MoveNumericKeyboardUp();
+                    break;
+                case Animation.DOWN:
+                    MoveNumericKeyboardDown();
+                    break;
+            }
+            
+        }
+
+        private void MoveNumericKeyboardUp()
+        {
             var currentLocation = NumericKeyboardPanel.Location;
 
             // decrement current location of Numeric Keyboard by 20
@@ -229,10 +252,29 @@ namespace COMP123_S2019_Lesson9B
             NumericKeyboardPanel.Location = currentLocation;
 
             // compare NumericKeyboard current location with the Active Label
-            if(currentLocation.Y <= ActiveLabel.Location.Y + 55)
+            if (currentLocation.Y <= ActiveLabel.Location.Y + 55)
             {
                 NumericKeyboardPanel.Location = new Point(currentLocation.X, ActiveLabel.Location.Y + 55);
                 AnimationTimer.Enabled = false;
+                animationState = Animation.IDLE;
+            }
+        }
+
+        private void MoveNumericKeyboardDown()
+        {
+            var currentLocation = NumericKeyboardPanel.Location;
+
+            // increment current location of Numeric Keyboard by 20
+            currentLocation = new Point(currentLocation.X, currentLocation.Y + 20);
+            NumericKeyboardPanel.Location = currentLocation;
+
+            // compare NumericKeyboard current location with the Active Label
+            if (currentLocation.Y >= 466)
+            {
+                NumericKeyboardPanel.Location = new Point(currentLocation.X, 466);
+                AnimationTimer.Enabled = false;
+                animationState = Animation.IDLE;
+                NumericKeyboardPanel.Visible = false;
             }
         }
     }
