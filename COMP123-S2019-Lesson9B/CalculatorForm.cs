@@ -17,6 +17,8 @@ namespace COMP123_S2019_Lesson9B
         public bool decimalExists { get; set; }
         public float outputValue { get; set; }
 
+        public Label ActiveLabel { get; set; }
+
         /// <summary>
         /// This is the Constructor for the Calculator Form
         /// </summary>
@@ -26,7 +28,38 @@ namespace COMP123_S2019_Lesson9B
 
         }
 
-       
+        /// <summary>
+        /// This is the event handler that triggers when the form loads
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CalculatorForm_Load(object sender, EventArgs e)
+        {
+            clearNumericKeyboard();
+
+            ActiveLabel = null;
+            CalculatorButtonTableLayoutPanel.Visible = false;
+        }
+
+        /// <summary>
+        /// This is the event handler for the CalculatorForm Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CalculatorForm_Click(object sender, EventArgs e)
+        {
+            clearNumericKeyboard();
+
+            if(ActiveLabel != null)
+            {
+                ActiveLabel.BackColor = Color.White;
+            }
+
+            ActiveLabel = null;
+            CalculatorButtonTableLayoutPanel.Visible = false;
+        }
+
+
         /// <summary>
         /// This is the shared Event Handler for all the calculator buttons - Click Event
         /// </summary>
@@ -102,9 +135,12 @@ namespace COMP123_S2019_Lesson9B
                 outputString = "0";
             }
             outputValue = float.Parse(outputString);
-            HeightLabel.Text = outputValue.ToString();
+            ActiveLabel.Text = outputValue.ToString();
             clearNumericKeyboard();
             CalculatorButtonTableLayoutPanel.Visible = false;
+
+            ActiveLabel.BackColor = Color.White;
+            ActiveLabel = null;
         }
 
 
@@ -142,24 +178,35 @@ namespace COMP123_S2019_Lesson9B
             outputValue = 0.0f;
         }
 
-        /// <summary>
-        /// This is the event handler that triggers when the form loads
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CalculatorForm_Load(object sender, EventArgs e)
-        {
-            clearNumericKeyboard();
-        }
+       
 
         /// <summary>
         /// This is the event handler for the HeightLabel Click Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void HeightLabel_Click(object sender, EventArgs e)
+        private void ActiveLabel_Click(object sender, EventArgs e)
         {
+            if(ActiveLabel != null)
+            {
+                ActiveLabel.BackColor = Color.White;
+                ActiveLabel = null;
+            }
+
+            ActiveLabel = sender as Label;
+
+            ActiveLabel.BackColor = Color.LightBlue;
+
             CalculatorButtonTableLayoutPanel.Visible = true;
+
+            if(ActiveLabel.Text != "0")
+            {
+                ResultLabel.Text = ActiveLabel.Text;
+                outputString = ActiveLabel.Text;
+
+            }
         }
+
+ 
     }
 }
