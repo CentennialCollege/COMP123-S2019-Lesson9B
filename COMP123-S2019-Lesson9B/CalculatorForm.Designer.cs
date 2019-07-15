@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CalculatorButtonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.components = new System.ComponentModel.Container();
+            this.NumericKeyboardPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ResultLabel = new System.Windows.Forms.Label();
             this.ThreeButton = new System.Windows.Forms.Button();
             this.TwoButton = new System.Windows.Forms.Button();
@@ -47,42 +48,43 @@
             this.HeightLabel = new System.Windows.Forms.Label();
             this.WeightLabel = new System.Windows.Forms.Label();
             this.AgeLabel = new System.Windows.Forms.Label();
-            this.CalculatorButtonTableLayoutPanel.SuspendLayout();
+            this.AnimationTimer = new System.Windows.Forms.Timer(this.components);
+            this.NumericKeyboardPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CalculatorButtonTableLayoutPanel
             // 
-            this.CalculatorButtonTableLayoutPanel.ColumnCount = 4;
-            this.CalculatorButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CalculatorButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CalculatorButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CalculatorButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.ResultLabel, 0, 0);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.ThreeButton, 2, 3);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.TwoButton, 1, 3);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.OneButton, 0, 3);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.SixButton, 2, 2);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.FiveButton, 1, 2);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.FourButton, 0, 2);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.NineButton, 2, 1);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.EightButton, 1, 1);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.SevenButton, 0, 1);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.DecimalButton, 2, 4);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.ClearButton, 3, 2);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.BackSpaceButton, 3, 1);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.ZeroButton, 0, 4);
-            this.CalculatorButtonTableLayoutPanel.Controls.Add(this.DoneButton, 3, 3);
-            this.CalculatorButtonTableLayoutPanel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculatorButtonTableLayoutPanel.Location = new System.Drawing.Point(12, 466);
-            this.CalculatorButtonTableLayoutPanel.Name = "CalculatorButtonTableLayoutPanel";
-            this.CalculatorButtonTableLayoutPanel.RowCount = 5;
-            this.CalculatorButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.CalculatorButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.CalculatorButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.CalculatorButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.CalculatorButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.CalculatorButtonTableLayoutPanel.Size = new System.Drawing.Size(280, 223);
-            this.CalculatorButtonTableLayoutPanel.TabIndex = 0;
+            this.NumericKeyboardPanel.ColumnCount = 4;
+            this.NumericKeyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.NumericKeyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.NumericKeyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.NumericKeyboardPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.NumericKeyboardPanel.Controls.Add(this.ResultLabel, 0, 0);
+            this.NumericKeyboardPanel.Controls.Add(this.ThreeButton, 2, 3);
+            this.NumericKeyboardPanel.Controls.Add(this.TwoButton, 1, 3);
+            this.NumericKeyboardPanel.Controls.Add(this.OneButton, 0, 3);
+            this.NumericKeyboardPanel.Controls.Add(this.SixButton, 2, 2);
+            this.NumericKeyboardPanel.Controls.Add(this.FiveButton, 1, 2);
+            this.NumericKeyboardPanel.Controls.Add(this.FourButton, 0, 2);
+            this.NumericKeyboardPanel.Controls.Add(this.NineButton, 2, 1);
+            this.NumericKeyboardPanel.Controls.Add(this.EightButton, 1, 1);
+            this.NumericKeyboardPanel.Controls.Add(this.SevenButton, 0, 1);
+            this.NumericKeyboardPanel.Controls.Add(this.DecimalButton, 2, 4);
+            this.NumericKeyboardPanel.Controls.Add(this.ClearButton, 3, 2);
+            this.NumericKeyboardPanel.Controls.Add(this.BackSpaceButton, 3, 1);
+            this.NumericKeyboardPanel.Controls.Add(this.ZeroButton, 0, 4);
+            this.NumericKeyboardPanel.Controls.Add(this.DoneButton, 3, 3);
+            this.NumericKeyboardPanel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumericKeyboardPanel.Location = new System.Drawing.Point(12, 466);
+            this.NumericKeyboardPanel.Name = "CalculatorButtonTableLayoutPanel";
+            this.NumericKeyboardPanel.RowCount = 5;
+            this.NumericKeyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.NumericKeyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.NumericKeyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.NumericKeyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.NumericKeyboardPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.NumericKeyboardPanel.Size = new System.Drawing.Size(280, 223);
+            this.NumericKeyboardPanel.TabIndex = 0;
             // 
             // ResultLabel
             // 
@@ -91,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ResultLabel.BackColor = System.Drawing.Color.White;
             this.ResultLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CalculatorButtonTableLayoutPanel.SetColumnSpan(this.ResultLabel, 4);
+            this.NumericKeyboardPanel.SetColumnSpan(this.ResultLabel, 4);
             this.ResultLabel.Font = new System.Drawing.Font("Arial Narrow", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResultLabel.Location = new System.Drawing.Point(3, 0);
             this.ResultLabel.Name = "ResultLabel";
@@ -301,7 +303,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ZeroButton.BackColor = System.Drawing.Color.SteelBlue;
-            this.CalculatorButtonTableLayoutPanel.SetColumnSpan(this.ZeroButton, 2);
+            this.NumericKeyboardPanel.SetColumnSpan(this.ZeroButton, 2);
             this.ZeroButton.ForeColor = System.Drawing.Color.White;
             this.ZeroButton.Location = new System.Drawing.Point(3, 179);
             this.ZeroButton.Name = "ZeroButton";
@@ -322,7 +324,7 @@
             this.DoneButton.ForeColor = System.Drawing.Color.White;
             this.DoneButton.Location = new System.Drawing.Point(213, 135);
             this.DoneButton.Name = "DoneButton";
-            this.CalculatorButtonTableLayoutPanel.SetRowSpan(this.DoneButton, 2);
+            this.NumericKeyboardPanel.SetRowSpan(this.DoneButton, 2);
             this.DoneButton.Size = new System.Drawing.Size(64, 85);
             this.DoneButton.TabIndex = 11;
             this.DoneButton.Tag = "done";
@@ -369,6 +371,11 @@
             this.AgeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.AgeLabel.Click += new System.EventHandler(this.ActiveLabel_Click);
             // 
+            // AnimationTimer
+            // 
+            this.AnimationTimer.Interval = 16;
+            this.AnimationTimer.Tick += new System.EventHandler(this.AnimationTimer_Tick);
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +384,7 @@
             this.Controls.Add(this.AgeLabel);
             this.Controls.Add(this.WeightLabel);
             this.Controls.Add(this.HeightLabel);
-            this.Controls.Add(this.CalculatorButtonTableLayoutPanel);
+            this.Controls.Add(this.NumericKeyboardPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "CalculatorForm";
@@ -385,14 +392,14 @@
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.CalculatorForm_Load);
             this.Click += new System.EventHandler(this.CalculatorForm_Click);
-            this.CalculatorButtonTableLayoutPanel.ResumeLayout(false);
+            this.NumericKeyboardPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel CalculatorButtonTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel NumericKeyboardPanel;
         private System.Windows.Forms.Button DoneButton;
         private System.Windows.Forms.Button ZeroButton;
         private System.Windows.Forms.Button ThreeButton;
@@ -411,6 +418,7 @@
         private System.Windows.Forms.Label HeightLabel;
         private System.Windows.Forms.Label WeightLabel;
         private System.Windows.Forms.Label AgeLabel;
+        private System.Windows.Forms.Timer AnimationTimer;
     }
 }
 
