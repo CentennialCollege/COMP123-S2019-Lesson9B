@@ -39,6 +39,9 @@ namespace COMP123_S2019_Lesson9B
 
             ActiveLabel = null;
             CalculatorButtonTableLayoutPanel.Visible = false;
+
+            Size = new Size(320, 480);
+
         }
 
         /// <summary>
@@ -205,6 +208,9 @@ namespace COMP123_S2019_Lesson9B
                 outputString = ActiveLabel.Text;
 
             }
+
+            CalculatorButtonTableLayoutPanel.Location = new Point(12, ActiveLabel.Location.Y + 55);
+            CalculatorButtonTableLayoutPanel.BringToFront();
         }
 
  

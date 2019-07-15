@@ -73,7 +73,7 @@
             this.CalculatorButtonTableLayoutPanel.Controls.Add(this.ZeroButton, 0, 4);
             this.CalculatorButtonTableLayoutPanel.Controls.Add(this.DoneButton, 3, 3);
             this.CalculatorButtonTableLayoutPanel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculatorButtonTableLayoutPanel.Location = new System.Drawing.Point(12, 206);
+            this.CalculatorButtonTableLayoutPanel.Location = new System.Drawing.Point(12, 466);
             this.CalculatorButtonTableLayoutPanel.Name = "CalculatorButtonTableLayoutPanel";
             this.CalculatorButtonTableLayoutPanel.RowCount = 5;
             this.CalculatorButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -373,11 +373,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 441);
+            this.ClientSize = new System.Drawing.Size(304, 701);
             this.Controls.Add(this.AgeLabel);
             this.Controls.Add(this.WeightLabel);
             this.Controls.Add(this.HeightLabel);
             this.Controls.Add(this.CalculatorButtonTableLayoutPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CalculatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
